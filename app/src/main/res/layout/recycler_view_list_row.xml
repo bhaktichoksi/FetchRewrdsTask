@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/txtListId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_arrow"
+            android:fontFamily="@font/font_mediam"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_12sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:textColor="@color/black1"
+            android:textSize="@dimen/_11ssp" />
+
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/iv_right_arrow"
+            app:tint="@color/colorAccent" />
+
+    </RelativeLayout>
+
+    <com.github.aakira.expandablelayout.ExpandableLinearLayout
+        android:id="@+id/expandableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_20sdp"
+        app:ael_duration="400"
+        app:ael_expanded="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:scrollbars="vertical" />
+
+    </com.github.aakira.expandablelayout.ExpandableLinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/expandableLayout"
+        android:background="@drawable/line_divider" />
+</RelativeLayout>
